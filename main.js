@@ -81,7 +81,7 @@ window.onload = function () {
   }, 100);
 };
 /*--------------메인 풀페이지JS  End ------------*/
-/*----------1. 이미지 슬라이딩 start-------*/
+/*----------1. 이미지 슬라이딩 start-------------*/
 let slideIndex = 1; //1
 
 showSlides(slideIndex);
@@ -94,19 +94,18 @@ function currentSlide(n) {
 function showSlides(n) {
   // n값 = 1
   let i;
-  let slides = document.getElementsByClassName("mySlides"); //배열로 내려온다
+  let slides = document.getElementsByClassName("mySlides"); //배열로
   if (n > slides.length) {
-    // n값이 3이상일때 초기화 시키기 위해(1로)
     slideIndex = 1;
   }
   if (n < 1) {
-    // 첫번째 이미지에서 왼쪽을 누를경우 마지막 이미지 나오게
-    slideIndex = slides.length;
+    slideIndex = slides.length; // 첫번째 이미지에서 왼쪽을 누를경우 마지막 이미지 나오게
   }
+
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none"; //안보이게(사라지는건아님) 사용자한테 안보이게
+    slides[i].style.display = "none"; //안보이게
   }
-  slides[slideIndex - 1].style.display = "block"; //첫화면 1번 이미지 보이게(배열 인덱스 순서 맞춤)
+  slides[slideIndex - 1].style.display = "block"; //첫화면 1번 이미지 보이게
 }
 
 /*--------------1. 이미지 슬라이딩 end------------*/
@@ -119,13 +118,8 @@ let here_spot2 = document.getElementById("here-spot2");
 
 window.addEventListener("scroll", function () {
   let value = window.scrollY;
-
   // console.log("윈도우 높이" + window.innerHeight);
-  // console.log("스크롤 값" + value);
-
   if (value > 150) {
-    // here_spot.style= "animation : fadein 1.5s";
-    //  here_spot.style = "animation : fadein 1.5s ease-in";
     // here_spot.classList.add('fadeInUp');
     here_spot.style = "opacity : 1";
     here_spot.style = "animation: fadeInUp 1.8s forwards;";
@@ -169,9 +163,7 @@ window.addEventListener("keyup", (e) => {
   }
 });
 
-
-//객체로구현
-
+//객체로
 function modalDetail(params) {
   let name = params;
   let result = {};
@@ -216,17 +208,12 @@ let here_spot4 = document.getElementById("here-spot4");
 window.addEventListener("scroll", function () {
   let value = window.scrollY;
 
-  // console.log("윈도우 높이" + window.innerHeight);
-  // console.log("스크롤 값" + value);
-
-  if (value > 1200) {
-    // here_spot.style= "animation : fadein 1.5s";
-    //  here_spot.style = "animation : fadein 1.5s ease-in";
+  if (value > 1100) {
     // here_spot.classList.add('fadeInUp');
     here_spot3.style = "opacity : 1";
     here_spot3.style = "animation: fadeInUp 1.8s forwards;";
   }
-  if (value > 1500) {
+  if (value > 1350) {
     here_spot4.style = "opacity : 1";
     here_spot4.style = "animation: fadeInUp 1.8s forwards;";
   }
@@ -237,8 +224,87 @@ window.addEventListener("scroll", function () {
 var container = document.getElementById("map"); //지도를 담을 영역의 DOM 레퍼런스
 var options = {
   //지도를 생성할 때 필요한 기본 옵션
-  center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
-  level: 3, //지도의 레벨(확대, 축소 정도)
+  center: new kakao.maps.LatLng(37.55876028104912, 126.91730057286772), //지도의 중심좌표.
+  level: 5, //지도의 레벨(확대, 축소 정도)
 };
 
 var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+
+// 마커를 표시할 위치와 title 객체 배열입니다
+var positions = [
+  {
+    title: "당인리책발전소",
+    latlng: new kakao.maps.LatLng(37.555624833127716, 126.91113041837029),
+    text: "카카오",
+  },
+  {
+    title: "어쩌다책방",
+    latlng: new kakao.maps.LatLng(37.55283892821797, 126.92832981465126),
+    text: "카카오",
+  },
+  {
+    title: "책익다",
+    latlng: new kakao.maps.LatLng(37.555639845709244, 126.92640318062097),
+    text: "카카오",
+  },
+  {
+    title: "gaga77page",
+    latlng: new kakao.maps.LatLng(37.557257763162085, 126.90517541840744),
+    text: "카카오",
+  },
+  {
+    title: "땡스북스",
+    latlng: new kakao.maps.LatLng(37.548840569423575, 126.91769063077982),
+    text: "카카오",
+  },
+  {
+    title: "번역가의 서재",
+    latlng: new kakao.maps.LatLng(37.557649881934076, 126.91425451854089),
+    text: "카카오",
+  },
+  {
+    title: "책방꼴",
+    latlng: new kakao.maps.LatLng(37.55699634243369, 126.91696299530305),
+    text: "카카오",
+  },
+  {
+    title: "책방서로",
+    latlng: new kakao.maps.LatLng(37.56535047480829, 126.91645569460924),
+    text: "카카오",
+  },
+  {
+    title: "사적인서점",
+    latlng: new kakao.maps.LatLng(37.56159674570155, 126.90603010741025),
+    text: "카카오",
+  },
+  {
+    title: "로우북스",
+    latlng: new kakao.maps.LatLng(37.552382394644894, 126.90678293257045),
+    text: "카카오",
+  },
+];
+
+// var content = '<div class ="label"><span class="left"></span><span class="center">카카오!</span><span class="right"></span></div>';
+
+// 마커 이미지의 이미지 주소입니다
+var imageSrc =
+  "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+
+for (var i = 0; i < positions.length; i++) {
+  // 마커 이미지의 이미지 크기 입니다
+  var imageSize = new kakao.maps.Size(24, 35);
+
+  // 마커 이미지를 생성합니다
+  var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+  // 마커를 생성합니다
+  var marker = new kakao.maps.Marker({
+    map: map, // 마커를 표시할 지도
+    position: positions[i].latlng, // 마커를 표시할 위치
+    title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+    image: markerImage, // 마커 이미지
+    text: positions[i].text,
+  });
+}
+
+/*---------------5. 카카오지도 End----------------*/

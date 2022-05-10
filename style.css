@@ -1,7 +1,7 @@
-*{
+* {
   box-sizing: border-box;
   padding: 0;
-  margin: 0; 
+  margin: 0;
 }
 
 #wrapper {
@@ -20,7 +20,6 @@
   padding: 0 40px;
   background-color: #fff;
   transition: 0.3s;
-  
 }
 #header .bg {
   position: absolute;
@@ -44,13 +43,13 @@
   left: 0;
   top: 20px;
   animation: linear ease-in-out;
-  width:130px;
+  width: 130px;
 }
-#header .inner h1 img{
+#header .inner h1 img {
   display: inline-block;
   height: 100%;
   width: 100%;
-  padding : 20px 0 0
+  padding: 20px 0 0;
 }
 
 #header .inner h2 {
@@ -60,13 +59,12 @@
   width: 240px;
   text-align: center;
   top: -20px;
-
 }
-#header .inner h2 ul {  
+#header .inner h2 ul {
   display: inline-block;
   padding: 65px 0 0 0;
   border-top: 1px solid #c6c6c6;
-  font-family: 'Cinzel', serif;
+  font-family: "Cinzel", serif;
   font-size: 30px;
   letter-spacing: 0.3em;
   text-align: center;
@@ -141,29 +139,36 @@ main {
 
 .section._3 {
   background-color: #fdfdf3;
-  display: flex; 
+  display: flex;
   text-align: center;
   justify-content: center;
-
 }
-.section3{
-  width: 80%; 
-  margin: auto; 
+.section3 {
+  width: 80%;
+  margin: auto;
   height: 100vh;
   align-items: center;
 }
-
 .section._4 {
   overflow: hidden;
   background-color: #fdfdf3;
   text-align: center;
-
   vertical-align: middle;
- 
 }
-
 .section._5 {
-  background-color: rgb(235, 250, 255);
+  background-color: #fdfdf3;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.section5 {
+  width: 80%;
+  margin: auto;
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
 .heading {
@@ -275,11 +280,11 @@ a {
 
 /*---------------1.이미지 슬라이드 End---------------------*/
 /*---------------2.섹션2 서점정보, 이미지 Start------------*/
-.section._2 img{
-  width: 450px; 
-  height : 450px;  
-  align-content: center; 
-  overflow: hidden;  
+.section._2 img {
+  width: 450px;
+  height: 450px;
+  align-content: center;
+  overflow: hidden;
   /* box-shadow: gray 0px 5px 15px 0px; */
   transition: all 0.2s linear;
 }
@@ -292,44 +297,43 @@ a {
   /* justify-content: center; */
   opacity: 0;
 }
-.text{
-  width : 60%; 
-  height: 100%;  
-  display: flex; 
+.text {
+  width: 60%;
+  height: 100%;
+  display: flex;
   align-items: center;
 }
 
-.here-spot .text div:nth-child(1){
-  padding: 0 0 0 50px; 
-  margin : 0 auto;
+.here-spot .text div:nth-child(1) {
+  padding: 0 0 0 50px;
+  margin: 0 auto;
 }
 
-.text table{
+.text table {
   text-align: left;
 }
-.text table th{
-  font-size: 40px; 
-  padding: 10px; 
-  font-family: 'Hahmlet', serif; 
-  font-weight: 400; 
+.text table th {
+  font-size: 40px;
+  padding: 10px;
+  font-family: "Hahmlet", serif;
+  font-weight: 400;
   text-align: center;
 }
-.text table td:nth-child(1){
+.text table td:nth-child(1) {
   width: 100px;
-  font-family: 'Hahmlet', serif; 
+  font-family: "Hahmlet", serif;
   font-weight: 500;
   font-size: 25px;
-  
 }
-.text table td:nth-child(2){
-  font-family: 'Hahmlet', serif;
+.text table td:nth-child(2) {
+  font-family: "Hahmlet", serif;
   padding: 20px 50px 20px 50px;
 }
-.here-spot .pic{
-  width : 40%; 
-  height: 100%;  
-  display: flex; 
-  align-items: center; 
+.here-spot .pic {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
   justify-content: flex-end;
   overflow: hidden;
 }
@@ -340,25 +344,25 @@ a {
   height: 50vh;
   display: inline-flex;
   justify-content: center;
-  opacity : 0;
-} 
-.here-spot2 .pic{
-  width : 40%; 
-  height: 100%;  
-  display: flex; 
-  align-items: center; 
+  opacity: 0;
+}
+.here-spot2 .pic {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
   justify-content: flex-start;
 }
-.here-spot2 .text div:nth-child(1){
-  padding: 0 50px 0 0; 
+.here-spot2 .text div:nth-child(1) {
+  padding: 0 50px 0 0;
 }
-.section._2 .pic2{
+.section._2 .pic2 {
   max-width: 100%;
   max-height: 100%;
   overflow: hidden;
 }
-.section._2 img:hover{
-  transform: scale(1.3,1.3);
+.section._2 img:hover {
+  transform: scale(1.3, 1.3);
 }
 
 /*-------------2.섹션2 서점정보, 이미지 End-------------------*/
@@ -409,41 +413,38 @@ a {
   color: black;
 }
 
-.content table td:nth-child(1){
+.content table td:nth-child(1) {
   width: 100px;
-  font-family: 'Hahmlet', serif; 
+  font-family: "Hahmlet", serif;
   font-weight: 500;
   font-size: 20px;
-  
 }
-.content table td:nth-child(2){
-  font-family: 'Hahmlet', serif;
+.content table td:nth-child(2) {
+  font-family: "Hahmlet", serif;
   padding: 20px 30px 20px 30px;
 }
 
-
-.section3book{
+.section3book {
   position: relative;
-  height: 100%; 
-  padding: 60px; 
-  display: flex; 
-  flex-wrap: wrap; 
-  align-items: center; 
+  height: 100%;
+  padding: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: space-around;
   overflow: hidden;
 }
-.section3 img{
-  width:300px; 
-  height : 300px; 
+.section3 img {
+  width: 300px;
+  height: 300px;
   align-items: center;
   overflow: hidden;
   box-sizing: content-box;
-
 }
 
-.modalbook{
-  width:300px; 
-  height : 300px; 
+.modalbook {
+  width: 300px;
+  height: 300px;
   align-items: center;
   overflow: hidden;
   box-sizing: content-box;
@@ -452,9 +453,9 @@ a {
   cursor: pointer;
 }
 
-.modalbook .textbox{
-  width:300px; 
-  height : 300px; 
+.modalbook .textbox {
+  width: 300px;
+  height: 300px;
   position: absolute;
   top: 0;
   left: 50%;
@@ -465,23 +466,22 @@ a {
   align-items: center;
   justify-content: center;
   opacity: 0;
-  font-family: 'Hahmlet', serif; 
+  font-family: "Hahmlet", serif;
   font-size: 30px;
   text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-
 }
- .textbox:hover{
+.textbox:hover {
   opacity: 1;
-  background-color: rgba( 255, 255, 255, 0.3 );
-} 
+  background-color: rgba(255, 255, 255, 0.3);
+}
 
 /*-------------3.섹션3 모달 End----------------------------*/
 /*-------------4.섹션4 Start-------------------------------*/
-.section._4 img{
-  width: 450px; 
-  height : 450px;  
-  align-content: center; 
-  overflow: hidden;  
+.section._4 img {
+  width: 450px;
+  height: 450px;
+  align-content: center;
+  overflow: hidden;
   /* box-shadow: gray 0px 5px 15px 0px; */
   transition: all 0.2s linear;
 }
@@ -494,44 +494,43 @@ a {
   /* justify-content: center; */
   opacity: 0;
 }
-.text{
-  width : 60%; 
-  height: 100%;  
-  display: flex; 
+.text {
+  width: 60%;
+  height: 100%;
+  display: flex;
   align-items: center;
 }
 
-.here-spot4 .text div:nth-child(1){
-  padding: 0 0 0 50px; 
-  margin : 0 auto;
+.here-spot4 .text div:nth-child(1) {
+  padding: 0 0 0 50px;
+  margin: 0 auto;
 }
 
-.text table{
+.text table {
   text-align: left;
 }
-.text table th{
-  font-size: 40px; 
-  padding: 10px; 
-  font-family: 'Hahmlet', serif; 
-  font-weight: 400; 
+.text table th {
+  font-size: 40px;
+  padding: 10px;
+  font-family: "Hahmlet", serif;
+  font-weight: 400;
   text-align: center;
 }
-.text table td:nth-child(1){
+.text table td:nth-child(1) {
   width: 100px;
-  font-family: 'Hahmlet', serif; 
+  font-family: "Hahmlet", serif;
   font-weight: 500;
   font-size: 25px;
-  
 }
-.text table td:nth-child(2){
-  font-family: 'Hahmlet', serif;
+.text table td:nth-child(2) {
+  font-family: "Hahmlet", serif;
   padding: 20px 50px 20px 50px;
 }
-.here-spot4 .pic{
-  width : 40%; 
-  height: 100%;  
-  display: flex; 
-  align-items: center; 
+.here-spot4 .pic {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
   justify-content: flex-end;
   overflow: hidden;
 }
@@ -542,43 +541,48 @@ a {
   height: 50vh;
   display: inline-flex;
   justify-content: center;
-  opacity : 0;
-} 
-.here-spot3 .pic{
-  width : 40%; 
-  height: 100%;  
-  display: flex; 
-  align-items: center; 
+  opacity: 0;
+}
+.here-spot3 .pic {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
   justify-content: flex-start;
 }
-.here-spot3 .text div:nth-child(1){
-  padding: 0 50px 0 0; 
+.here-spot3 .text div:nth-child(1) {
+  padding: 0 50px 0 0;
 }
-.section._4 .pic2{
+.section._4 .pic2 {
   max-width: 100%;
   max-height: 100%;
   overflow: hidden;
 }
-.section._4 img:hover{
-  transform: scale(1.3,1.3);
+.section._4 img:hover {
+  transform: scale(1.3, 1.3);
 }
 
 /*-------------4.섹션4 End---------------------------------*/
+/*-------------5.섹션5 Start---------------------------------*/
+
+/*-------------5.섹션5 End---------------------------------*/
 /* -------------메인 End---------------------- */
 footer {
-  background-color: darkgreen;
+  background-color: lightyellow;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
-
-
 
 @keyframes fadeInUp {
   from {
-      opacity: 0;
-      transform: translate3d(0%, 200%, 0); /*밑에서 올라오는 효과*/
+    opacity: 0;
+    transform: translate3d(0%, 200%, 0); /*밑에서 올라오는 효과*/
   }
   to {
-      opacity: 1;
-      transform: translateZ(0);   /*밑에서 올라오는 효과*/
+    opacity: 1;
+    transform: translateZ(0); /*밑에서 올라오는 효과*/
   }
 }
 .fadeInUp {
@@ -588,11 +592,11 @@ footer {
 
 @keyframes fadein {
   from {
-      opacity: 0;
-      transform: scale(.7, .7);
+    opacity: 0;
+    transform: scale(0.7, 0.7);
   }
   to {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
