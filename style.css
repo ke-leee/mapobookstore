@@ -451,6 +451,7 @@ a {
   padding: 0 50px;
   position: relative;
   cursor: pointer;
+  opacity: 0;
 }
 
 .modalbook .textbox {

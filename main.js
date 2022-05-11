@@ -197,6 +197,23 @@ function modalShow(result) {
     `<a href = ` + result.site + ` class = "fab fa-instagram fa-2x" ></a>`;
 }
 
+//밑에서 하나씩 나타나게
+let modalbook = document.getElementsByClassName("modalbook");
+
+window.addEventListener("scroll", function () {
+  let value = Math.round(window.scrollY);
+
+  if (value > 780 ) {
+      for (let i = 0; i < modalbook.length; i++) {
+        setTimeout(() => {
+          console.log(modalbook[i]);
+          modalbook[i].style = "opacity : 1; animation: fadeInUp 0.7s forwards" ;
+        }, i*150);
+      }
+  }
+});
+
+
 /*--------------3. 모달 End------------------------*/
 /*--------------4. 이미지, 글 스크롤Start-----------*/
 
@@ -221,80 +238,144 @@ window.addEventListener("scroll", function () {
 
 /*--------------4. 이미지, 글 스크롤End-------------*/
 /*---------------5. 카카오지도 Start----------------*/
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-    mapOption = { 
-        center: new kakao.maps.LatLng(37.55876028104912, 126.91730057286772), // 지도의 중심좌표
-        level: 5 // 지도의 확대 레벨
-    };
- 
+var mapContainer = document.getElementById("map"), // 지도를 표시할 div
+  mapOption = {
+    center: new kakao.maps.LatLng(37.55876028104912, 126.91730057286772), // 지도의 중심좌표
+    level: 5, // 지도의 확대 레벨
+  };
+
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
- 
-// 마커가 표시될 위치입니다 
-var markerPosition  = new kakao.maps.LatLng(37.55876028104912, 126.91730057286772); 
- 
+
+// 마커가 표시될 위치입니다
+var markerPosition = new kakao.maps.LatLng(
+  37.55876028104912,
+  126.91730057286772
+);
+
 // 마커를 생성합니다
 var marker = new kakao.maps.Marker({
-    position: markerPosition
+  position: markerPosition,
 });
- 
- 
-var imageSrc = './images/icon.png';                              // 마커이미지 주소
-    imageSize = new kakao.maps.Size(34, 36);                // 마커이미지의 크기
-    imageOption = {offset: new kakao.maps.Point(17, 36)};   // 마커의 좌표와 일치시킬 이미지 안에서의 좌표설정
-      
+
+var imageSrc = "./images/icon.png"; // 마커이미지 주소
+imageSize = new kakao.maps.Size(34, 36); // 마커이미지의 크기
+imageOption = { offset: new kakao.maps.Point(17, 36) }; // 마커의 좌표와 일치시킬 이미지 안에서의 좌표설정
+
 // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
 var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
- 
- 
-var arr = new Array();
-arr[0] = ["당인리책발전소",37.555624833127716, 126.91113041837029, "서울 마포구 월드컵로14길 10-8 1층","123575123"];
-arr[1] = ["어쩌다책방",37.55283892821797, 126.92832981465126, "서울 마포구 월드컵로19길 74 1층 102호","1720347748"];
-arr[2] = ["책익다",37.555639845709244, 126.92640318062097, "서울 마포구 와우산로29마길 10-3 2층","1569570696"];
-arr[3] = ["gaga77page",37.557257763162085, 126.90517541840744, "서울 마포구 망원로 74-1 지하1층","895754731"];
-arr[4] = ["땡스북스",37.548840569423575, 126.91769063077982, "서울 마포구 양화로6길 57-6 1층","13312633"];
-arr[5] = ["번역가의 서재",37.557649881934076, 126.91425451854089, "서울 마포구 동교로17길 67 1층","1062133270"];
-arr[6] = ["책방꼴",37.55699634243369, 126.91696299530305, "서울 마포구 월드컵북로5나길 18 대우미래사랑아파트상가 1층 112호","1414047189"];
-arr[7] = ["책방서로",37.56535047480829, 126.91645569460924, "서울 마포구 연남로11길 46 1층","1834576970"];
-arr[8] = ["사적인서점",37.56159674570155, 126.90603010741025, "서울 마포구 성미산로1길 92 102호 ","786507630"];
-arr[9] = ["로우북스",37.552382394644894, 126.90678293257045, "서울 마포구 포은로 56 1층","679286709"];
 
- 
-var markerTmp;      // 마커
-var customOverlay;  // 오버레이
+var arr = new Array();
+arr[0] = [
+  "당인리책발전소",
+  37.555624833127716,
+  126.91113041837029,
+  "서울 마포구 월드컵로14길 10-8 1층",
+  "123575123",
+];
+arr[1] = [
+  "어쩌다책방",
+  37.55283892821797,
+  126.92832981465126,
+  "서울 마포구 월드컵로19길 74 1층 102호",
+  "1720347748",
+];
+arr[2] = [
+  "책익다",
+  37.555639845709244,
+  126.92640318062097,
+  "서울 마포구 와우산로29마길 10-3 2층",
+  "1569570696",
+];
+arr[3] = [
+  "gaga77page",
+  37.557257763162085,
+  126.90517541840744,
+  "서울 마포구 망원로 74-1 지하1층",
+  "895754731",
+];
+arr[4] = [
+  "땡스북스",
+  37.548840569423575,
+  126.91769063077982,
+  "서울 마포구 양화로6길 57-6 1층",
+  "13312633",
+];
+arr[5] = [
+  "번역가의 서재",
+  37.557649881934076,
+  126.91425451854089,
+  "서울 마포구 동교로17길 67 1층",
+  "1062133270",
+];
+arr[6] = [
+  "책방꼴",
+  37.55699634243369,
+  126.91696299530305,
+  "서울 마포구 월드컵북로5나길 18 대우미래사랑아파트상가 1층 112호",
+  "1414047189",
+];
+arr[7] = [
+  "책방서로",
+  37.56535047480829,
+  126.91645569460924,
+  "서울 마포구 연남로11길 46 1층",
+  "1834576970",
+];
+arr[8] = [
+  "사적인서점",
+  37.56159674570155,
+  126.90603010741025,
+  "서울 마포구 성미산로1길 92 102호 ",
+  "786507630",
+];
+arr[9] = [
+  "로우북스",
+  37.552382394644894,
+  126.90678293257045,
+  "서울 마포구 포은로 56 1층",
+  "679286709",
+];
+
+var markerTmp; // 마커
+var customOverlay; // 오버레이
 var contentStr;
- 
-for (var i=0;i<arr.length;i++) {
-    markerTmp = new daum.maps.Marker({
-        position: new daum.maps.LatLng(arr[i][1],arr[i][2]),
-        title: arr[i][0],
-        image: markerImage,
-        map:map
-    });
- 
-    contentStr = "<div class='customoverlay'><a href='https://map.kakao.com/link/map/"+ arr[i][4] +"' target='_blank'><span class='title'>"+ arr[i][0] +"</span></a></div>";
- 
-    customOverlay = new kakao.maps.CustomOverlay({
-        map: map,
-        position: new daum.maps.LatLng(arr[i][1],arr[i][2]),
-        content: contentStr,
-        yAnchor: 1 
-    });
+
+for (var i = 0; i < arr.length; i++) {
+  markerTmp = new daum.maps.Marker({
+    position: new daum.maps.LatLng(arr[i][1], arr[i][2]),
+    title: arr[i][0],
+    image: markerImage,
+    map: map,
+  });
+
+  contentStr =
+    "<div class='customoverlay'><a href='https://map.kakao.com/link/map/" +
+    arr[i][4] +
+    "' target='_blank'><span class='title'>" +
+    arr[i][0] +
+    "</span></a></div>";
+
+  customOverlay = new kakao.maps.CustomOverlay({
+    map: map,
+    position: new daum.maps.LatLng(arr[i][1], arr[i][2]),
+    content: contentStr,
+    yAnchor: 1,
+  });
 }
- 
 
 // 지도 타입 변경 컨트롤을 생성한다
 var mapTypeControl = new kakao.maps.MapTypeControl();
- 
+
 // 지도의 상단 우측에 지도 타입 변경 컨트롤을 추가한다
-map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);    
- 
+map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+
 // 지도에 확대 축소 컨트롤을 생성한다
 var zoomControl = new kakao.maps.ZoomControl();
- 
+
 // 지도의 우측에 확대 축소 컨트롤을 추가한다
 map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
- 
+
 // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
-// marker.setMap(null);   
+// marker.setMap(null);
 
 /*---------------5. 카카오지도 End----------------*/
