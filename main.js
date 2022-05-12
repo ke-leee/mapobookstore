@@ -1,4 +1,4 @@
-/*------------------헤더 start------------------*/
+/*------------------헤더 START------------------*/
 let header = document.querySelector("#header");
 let header_h1 = document.querySelector("#header_h1");
 let header_h2 = document.getElementById("#header_h2");
@@ -25,8 +25,7 @@ function scrollFunction() {
   }
 }
 
-/*--------------헤더 End-------------------------*/
-/*--------------메인 풀페이지JS start ------------*/
+/*--------------메인 풀페이지JS START ------------*/
 const main = document.querySelector("main");
 
 main.style.position = "absolute";
@@ -80,8 +79,8 @@ window.onload = function () {
     scrollTo(0, 0);
   }, 100);
 };
-/*--------------메인 풀페이지JS  End ------------*/
-/*----------1. 이미지 슬라이딩 start-------------*/
+
+/*----------섹션1 이미지 슬라이딩 START-------------*/
 let slideIndex = 1; //1
 
 showSlides(slideIndex);
@@ -92,7 +91,6 @@ function currentSlide(n) {
   showSlides((slideIndex = n));
 }
 function showSlides(n) {
-  // n값 = 1
   let i;
   let slides = document.getElementsByClassName("mySlides"); //배열로
   if (n > slides.length) {
@@ -108,9 +106,7 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = "block"; //첫화면 1번 이미지 보이게
 }
 
-/*--------------1. 이미지 슬라이딩 end------------*/
-/*--------------2. 이미지, 글 스크롤Start---------*/
-
+/*------------섹션2 이미지, 글 스크롤 START----------*/
 let here_spot = document.getElementById("here-spot");
 let here_spot2 = document.getElementById("here-spot2");
 
@@ -118,7 +114,6 @@ let here_spot2 = document.getElementById("here-spot2");
 
 window.addEventListener("scroll", function () {
   let value = window.scrollY;
-  // console.log("윈도우 높이" + window.innerHeight);
   if (value > 150) {
     // here_spot.classList.add('fadeInUp');
     here_spot.style = "opacity : 1";
@@ -130,8 +125,7 @@ window.addEventListener("scroll", function () {
   }
 });
 
-/*--------------2. 이미지, 글 스크롤End-----------*/
-/*--------------3. 모달 Start--------------------*/
+/*--------------섹션3 모달 START--------------------*/
 const modal = document.getElementById("modal");
 
 function modalOn() {
@@ -151,7 +145,6 @@ closeBtn.addEventListener("click", (e) => {
 
 modal.addEventListener("click", (e) => {
   //모달창 클릭시 다른 부분 흐리게
-
   const evTarget = e.target;
   if (evTarget.classList.contains("modal-overlay")) {
     modalOff();
@@ -163,8 +156,9 @@ window.addEventListener("keyup", (e) => {
   }
 });
 
-//객체로
 function modalDetail(params) {
+  //객체로
+
   let name = params;
   let result = {};
 
@@ -176,8 +170,8 @@ function modalDetail(params) {
   modalShow(result);
 }
 
-//모달창
 function modalShow(result) {
+  //모달창
   modalOn();
 
   const name = document.getElementById("name");
@@ -194,33 +188,29 @@ function modalShow(result) {
 
   const site = document.getElementById("site");
   site.innerHTML =
-    `<a href = ` + result.site + ` class = "fab fa-instagram fa-2x" ></a>`;
+    `<a href = ` +
+    result.site +
+    ` class = "fab fa-instagram fa-2x" target=”_blank” ></a>`;
 }
 
-//밑에서 하나씩 나타나게
+//이미지 밑에서 하나씩 나타나게
 let modalbook = document.getElementsByClassName("modalbook");
 
 window.addEventListener("scroll", function () {
   let value = Math.round(window.scrollY);
 
-  if (value > 780 ) {
-      for (let i = 0; i < modalbook.length; i++) {
-        setTimeout(() => {
-          console.log(modalbook[i]);
-          modalbook[i].style = "opacity : 1; animation: fadeInUp 0.7s forwards" ;
-        }, i*150);
-      }
+  if (value > 780) {
+    for (let i = 0; i < modalbook.length; i++) {
+      setTimeout(() => {
+        modalbook[i].style = "opacity : 1; animation: fadeInUp 0.7s forwards";
+      }, i * 150);
+    }
   }
 });
 
-
-/*--------------3. 모달 End------------------------*/
-/*--------------4. 이미지, 글 스크롤Start-----------*/
-
+/*--------------섹션4 이미지, 글 스크롤 START-----------*/
 let here_spot3 = document.getElementById("here-spot3");
 let here_spot4 = document.getElementById("here-spot4");
-
-// console.log(here_spot);
 
 window.addEventListener("scroll", function () {
   let value = window.scrollY;
@@ -236,23 +226,22 @@ window.addEventListener("scroll", function () {
   }
 });
 
-/*--------------4. 이미지, 글 스크롤End-------------*/
-/*---------------5. 카카오지도 Start----------------*/
+/*---------------섹션5 카카오지도 START----------------*/
 var mapContainer = document.getElementById("map"), // 지도를 표시할 div
   mapOption = {
     center: new kakao.maps.LatLng(37.55876028104912, 126.91730057286772), // 지도의 중심좌표
     level: 5, // 지도의 확대 레벨
   };
 
-var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성
 
-// 마커가 표시될 위치입니다
+// 마커가 표시될 위치
 var markerPosition = new kakao.maps.LatLng(
   37.55876028104912,
   126.91730057286772
 );
 
-// 마커를 생성합니다
+// 마커를 생성
 var marker = new kakao.maps.Marker({
   position: markerPosition,
 });
@@ -261,7 +250,7 @@ var imageSrc = "./images/icon.png"; // 마커이미지 주소
 imageSize = new kakao.maps.Size(34, 36); // 마커이미지의 크기
 imageOption = { offset: new kakao.maps.Point(17, 36) }; // 마커의 좌표와 일치시킬 이미지 안에서의 좌표설정
 
-// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+// 마커의 이미지정보를 가지고 있는 마커이미지를 생성
 var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
 
 var arr = new Array();
@@ -363,19 +352,17 @@ for (var i = 0; i < arr.length; i++) {
   });
 }
 
-// 지도 타입 변경 컨트롤을 생성한다
+// 지도 타입 변경 컨트롤을 생성
 var mapTypeControl = new kakao.maps.MapTypeControl();
 
-// 지도의 상단 우측에 지도 타입 변경 컨트롤을 추가한다
+// 지도의 상단 우측에 지도 타입 변경 컨트롤을 추가
 map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 
-// 지도에 확대 축소 컨트롤을 생성한다
+// 지도에 확대 축소 컨트롤을 생성
 var zoomControl = new kakao.maps.ZoomControl();
 
-// 지도의 우측에 확대 축소 컨트롤을 추가한다
+// 지도의 우측에 확대 축소 컨트롤을 추가
 map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
-// 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+// 아래 코드는 지도 위의 마커를 제거하는 코드
 // marker.setMap(null);
-
-/*---------------5. 카카오지도 End----------------*/
