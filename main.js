@@ -15,7 +15,6 @@ function scrollFunction() {
     header_h1.style = "top: 3px";
     logo_img.style = "width : 50%; height:50%;";
     header_ul.style = "font-size : 15px; padding : 45px 0 0 0;";
-
     //header_h1.classList.add('fold');
   } else {
     header.style = "height : 180px";
@@ -25,7 +24,7 @@ function scrollFunction() {
   }
 }
 
-/*--------------메인 풀페이지JS START ------------*/
+/*--------------메인스무스한 풀페이지JS START ------------*/
 const main = document.querySelector("main");
 
 main.style.position = "absolute";
@@ -41,18 +40,15 @@ let dy = sy;
 window.addEventListener("scroll", scroll);
 
 function scroll() {
-  // We only update the scroll position variables
+  // 스크롤위치 변수
   sx = window.pageXOffset;
   sy = window.pageYOffset;
 }
 
-// Then we start a `requestAnimationFrame` loop.
-
+// 루프를 돌면서 render함수 호출
 window.requestAnimationFrame(render);
 
 function render() {
-  // We calculate our container position by using our Linear Interpolation method.
-
   dx = lerp(dx, sx, 0.07);
   dy = lerp(dy, sy, 0.07);
 
@@ -60,15 +56,14 @@ function render() {
   dy = Math.floor(dy * 100) / 100;
 
   // Finally we translate our container to its new positions.
-  // Don't forget to add a minus sign because the container needs to move in
   // the opposite direction of the window scroll.
   main.style.transform = `translate(-${dx}px, -${dy}px)`;
 
-  // And we loop again.
+  //loop again
   window.requestAnimationFrame(render);
 }
 
-// This is our Linear Interpolation method.
+//Linear Interpolation method.
 function lerp(a, b, n) {
   return (1 - n) * a + n * b;
 }
@@ -104,6 +99,22 @@ function showSlides(n) {
     slides[i].style.display = "none"; //안보이게
   }
   slides[slideIndex - 1].style.display = "block"; //첫화면 1번 이미지 보이게
+}
+
+//새로고침시 랜덤 책 슬라이드
+let slideImg = document.getElementsByClassName("sildeImg");
+let imgPath = "./images/book";
+let jpgPath = ".jpg";
+
+window.onload = () => {
+  random();
+};
+
+function random() {
+  let randomNum = Math.floor(Math.random() * slideImg.length);
+  for (let i = 0; i < slideImg.length; i++) {
+    slideImg[i].src = imgPath + randomNum + "_" + i + jpgPath;
+  }
 }
 
 /*------------섹션2 이미지, 글 스크롤 START----------*/
@@ -145,6 +156,7 @@ closeBtn.addEventListener("click", (e) => {
 
 modal.addEventListener("click", (e) => {
   //모달창 클릭시 다른 부분 흐리게
+
   const evTarget = e.target;
   if (evTarget.classList.contains("modal-overlay")) {
     modalOff();
@@ -172,6 +184,7 @@ function modalDetail(params) {
 
 function modalShow(result) {
   //모달창
+
   modalOn();
 
   const name = document.getElementById("name");
