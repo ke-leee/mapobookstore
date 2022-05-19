@@ -5,11 +5,7 @@ let header_h2 = document.getElementById("#header_h2");
 let header_ul = document.getElementById("header_ul");
 let logo_img = document.getElementById("logo_img");
 
-window.onscroll = function () {
-  scrollFunction();
-};
-
-function scrollFunction() {
+window.addEventListener("scroll", function () {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
     header.style = "height : 92px";
     header_h1.style = "top: 3px";
@@ -22,7 +18,7 @@ function scrollFunction() {
     header_ul.style = "font-size : 30px";
     header_h1.style = "top: 20px";
   }
-}
+});
 
 /*--------------메인스무스한 풀페이지JS START ------------*/
 const main = document.querySelector("main");
@@ -37,13 +33,11 @@ let sy = 0;
 let dx = sx;
 let dy = sy;
 
-window.addEventListener("scroll", scroll);
-
-function scroll() {
+window.addEventListener("scroll", function () {
   // 스크롤위치 변수
   sx = window.pageXOffset;
   sy = window.pageYOffset;
-}
+});
 
 // 루프를 돌면서 render함수 호출
 window.requestAnimationFrame(render);
@@ -56,7 +50,7 @@ function render() {
   dy = Math.floor(dy * 100) / 100;
 
   // Finally we translate our container to its new positions.
-  // the opposite direction of the window scroll.
+  // the opposite direction of the window .
   main.style.transform = `translate(-${dx}px, -${dy}px)`;
 
   //loop again
@@ -69,11 +63,11 @@ function lerp(a, b, n) {
 }
 
 //새로고침 했을 때 스크롤을 맨 위로
-window.onload = function () {
+window.addEventListener("load", function () {
   setTimeout(function () {
     scrollTo(0, 0);
   }, 100);
-};
+});
 
 /*----------섹션1 이미지 슬라이딩 START-------------*/
 let slideIndex = 1; //1
@@ -106,9 +100,7 @@ let slideImg = document.getElementsByClassName("sildeImg");
 let imgPath = "./images/book";
 let jpgPath = ".jpg";
 
-window.onload = () => {
-  random();
-};
+window.addEventListener("load", random);
 
 function random() {
   let randomNum = Math.floor(Math.random() * slideImg.length);
@@ -211,7 +203,6 @@ let modalbook = document.getElementsByClassName("modalbook");
 
 window.addEventListener("scroll", function () {
   let value = Math.round(window.scrollY);
-
   if (value > 780) {
     for (let i = 0; i < modalbook.length; i++) {
       setTimeout(() => {
