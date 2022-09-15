@@ -11,7 +11,6 @@ window.addEventListener("scroll", function () {
     header_h1.style = "top: 3px";
     logo_img.style = "width : 50%; height:50%;";
     header_ul.style = "font-size : 15px; padding : 45px 0 0 0;";
-    //header_h1.classList.add('fold');
   } else {
     header.style = "height : 180px";
     logo_img.style = "width : 100%; height:100%;";
@@ -103,7 +102,8 @@ let jpgPath = ".jpg";
 window.addEventListener("load", random);
 
 function random() {
-  let randomNum = Math.floor(Math.random() * slideImg.length);
+  let randomNum = Math.floor(Math.random() * 2);
+  console.log(randomNum);
   for (let i = 0; i < slideImg.length; i++) {
     slideImg[i].src = imgPath + randomNum + "_" + i + jpgPath;
   }
