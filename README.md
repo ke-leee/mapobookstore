@@ -1,0 +1,4 @@
+- 프로젝트 명 : :book: **mapobookstore**
+- 프로젝트 목표 : 마포구 내 독립서점 들을 소개하는 웹 사이트
+- [Live Demo] (https://mapobook.netlify.app/)
+- VanillaJS로 구현한 싱글페이지 웹 사이트
